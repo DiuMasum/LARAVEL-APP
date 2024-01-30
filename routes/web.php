@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DemoController;
+use App\Http\Controllers\SingleActionController;
 
-Route::get('/', function(){
-    return view('home');
-});
+Route::get('/', [DemoController::class, 'home']);
+Route::get('/about', [DemoController::class, 'about']);
 
-Route::get('/about', function(){
-    return view('about');
-});
+Route::get('/course', SingleActionController::class);
