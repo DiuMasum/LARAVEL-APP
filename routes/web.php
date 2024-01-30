@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
-use App\Http\Controllers\SingleActionController;
+use App\Http\Controllers\RegistrationController;
 
-Route::get('/', [DemoController::class, 'home']);
-Route::get('/about', [DemoController::class, 'about']);
-
-Route::get('/course', SingleActionController::class);
+Route::get('/register', [RegistrationController::class, 'index']);
+Route::post('/register', [RegistrationController::class, 'register']);
