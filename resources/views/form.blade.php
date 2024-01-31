@@ -13,39 +13,12 @@
     <form action="{{url('/')}}/register" method="post">
         @csrf
       <div class="container">
-        <h1 class="text-center">Registration</h1>
-        <div class="form-group">
-          <label for="">Name</label>
-          <input type="text" name="name" id="" class="form-control" placeholder="" aria-describedat="helpId"/><span>
-            @error('name')
-                {{$message}}
-            @enderror
-          </span>
+        <x-input type="text" name="name" label="please enter your name"/>
+        <x-input type="email" name="email" label="please enter your email"/>
+        <x-input type="password" name="password" label="password"/>
+        <x-input type="password" name="password_confirmation" label="confirm password"/>
         </div>
-        <div class="form-group">
-            <label for="">Email</label>
-            <input type="email" name="email" id="" class="form-control" placeholder="" aria-describedat="helpId"/><span>
-                @error('email')
-                    {{$message}}
-                @enderror
-            </span>
-          </div>
-          <div class="form-group">
-            <label for="">Password</label>
-            <input type="password" name="password" id="" class="form-control" placeholder="" aria-describedat="helpId"/><span>
-                @error('password')
-                    {{$message}}
-                @enderror
-            </span>
-          </div>
-          <div class="form-group">
-            <label for="">Confirm Password</label>
-            <input type="password" name="password_confirmation" id="" class="form-control" placeholder="" aria-describedat="helpId"/><span>
-                @error('password_confirmation')
-                    {{$message}}
-                @enderror
-            </span>
-          </div>
+
           <button class="btn btn-primary">submit</button>
     </div>
 </form>
